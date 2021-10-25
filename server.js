@@ -1,10 +1,18 @@
+// edge cases
+// get routes to work
+
 const express = require('express');
 const app = express();
 
 const { notes } = require('./');
+app.use(express.static('public'))
 
-app.get('/notes/html', (req, res) => {
+  app.get('/public/notes/html', (req, res) => {
     res.sendFile('notes.html');
+  });
+
+  app.get('/public/index/html', (req, res) => {
+    res.sendFile('index.html');
   });
 
 
