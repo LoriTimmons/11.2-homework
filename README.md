@@ -19,3 +19,6 @@ Test using http://localhost:3002/
 lorietimmons@gmail.com <br>
 Repo: https://github.com/LoriTimmons/11.2-homework <br>
 Deployed App: https://loritimmons.github.io/11.2-homework/
+
+## Notes
+I realize this project is not complete. 
