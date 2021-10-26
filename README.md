@@ -8,8 +8,11 @@ How to use this application.
 * Make a .gitignore file and add your node_modules 
 * npm init 
 * npm i express.js
+
 ## Usage 
- This application will help you write and save notes. 
+ This application is used write and save notes. 
+ * run 'node server.js' or 'npm start' in the command line
+ * Navigate to port 3002 on your local host (http://localhost:3002/)
 ![VS Image 1](./SS1.png)  <br>
 
 ## Test
