@@ -11,7 +11,7 @@ How to use this application.
 
 ## Usage 
  This application is used write and save notes. 
- * run 'node server.js' or 'npm start' in the command line
+ * Run 'node server.js' or 'npm start' in the command line
  * Navigate to port 3002 on your local host (http://localhost:3002/)
 ![VS Image 1](./SS1.png)  <br>
 
