@@ -10,7 +10,7 @@ How to use this application.
 * npm i express.js
 
 ## Usage 
- This application is used write and save notes. 
+ This is a simple application is used write and save notes. 
  * Run 'node server.js' or 'npm start' in the command line
  * Navigate to port 3002 on your local host (http://localhost:3002/)
 ![VS Image 1](./SS1.png)  <br>
