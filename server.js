@@ -38,22 +38,6 @@ app.get("/api/notes", (req, res) => {
   });
 });
 
-// Hints for POST route and getting new note to save
-// Move the body to the db.json
-// hints access to the note. Read the db.json. fs.readfilr(). Read the file
-// Push into the array the new note into this db.json
-// json.parse - json.stringify
-// writefile
-// Send a response in the code to the post route
-// I can do this!
-
-// let responseFunction = function () {
-// fs.readFile("db/db.json","utf8", (err, data) => {
-
-//   if (err) throw err;
-  
-// let notes = JSON.parse(data);
-// });
 
 // POST Route. Saving the new note to db.json
 app.post("/api/notes", (req, res) => {
@@ -76,19 +60,8 @@ app.post("/api/notes", (req, res) => {
       })
     });
 
-
-    // notes.push(newNote);
-    // updateDb();
-    // return console.log("Added new note: "+newNote.title);
 });
 
-// responseFunction();
-
-// get note with ID
-// app.get("api/notes/:id", (req, res) => {
-//   res.json(notes[req.params.id]);
-// });
-// }
 
 // default route - keep near the bottom
 app.get("*", (req, res) => {

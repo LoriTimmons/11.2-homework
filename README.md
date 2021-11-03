@@ -8,6 +8,7 @@ How to use this application.
 * Make a .gitignore file and add your node_modules 
 * npm init 
 * npm i express.js
+* You will also need to install uuid with npm i uuid 
 
 ## Usage 
  This is a simple application is used write and save notes. 
@@ -22,7 +23,7 @@ Test using http://localhost:3002/
 lorietimmons@gmail.com <br>
 Repo: https://github.com/LoriTimmons/11.2-homework <br>
 Deployed App: https://loritimmons.github.io/11.2-homework/ <br>
-Heroku Deployment Application Link: Coming Soon! 
+Heroku Deployment Application Link: https://blooming-sierra-09974.herokuapp.com/notes
 
 ## Notes
 I realize this project is not deployed to Heroku and still needs some work. 
