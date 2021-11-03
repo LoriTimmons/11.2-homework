@@ -63,6 +63,8 @@ app.post("/api/notes", (req, res) => {
 });
 
 
+
+
 // default route - keep near the bottom
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));

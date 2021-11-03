@@ -24,6 +24,3 @@ lorietimmons@gmail.com <br>
 Repo: https://github.com/LoriTimmons/11.2-homework <br>
 Deployed App: https://loritimmons.github.io/11.2-homework/ <br>
 Heroku Deployment Application Link: https://blooming-sierra-09974.herokuapp.com/notes
-
-## Notes
-I realize this project is not deployed to Heroku and still needs some work. 
