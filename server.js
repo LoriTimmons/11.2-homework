@@ -4,9 +4,13 @@
 // building server w/express frame work
 const path = require("path");
 const express = require("express");
-const app = express();
 const fs = require("fs");
-const { notStrictEqual } = require("assert");
+const { v4: uuidv4 } = require('uuid');
+const PORT = process.env.PORT || 3002
+
+
+// running express 
+const app = express();
 
 // building middleware
 app.use(express.json());
@@ -43,53 +47,55 @@ app.get("/api/notes", (req, res) => {
 // Send a response in the code to the post route
 // I can do this!
 
+// let responseFunction = function () {
+// fs.readFile("db/db.json","utf8", (err, data) => {
+
+//   if (err) throw err;
+  
+// let notes = JSON.parse(data);
+// });
+
 // POST Route. Saving the new note to db.json
 app.post("/api/notes", (req, res) => {
-  // rec a new note and adds (push to the array) to db.json, then returns a new note
-  console.log(req.body);
+    let newNote = req.body; 
+    console.log(newNote);
+    newNote.id = uuidv4();
+    console.log("This is new note", newNote);
+    fs.readFile("./db/db.json", (err, data) => {
+      if (err) {
+        throw err;
+      }
+      let notes = JSON.parse(data)
+      notes.push(newNote);
+      // console.log(notes)
+      fs.writeFile("./db/db.json", JSON.stringify(notes), (err) => {
+        if (err) {
+          throw err;
+        }
+      res.json(newNote);
+      })
+    });
 
-  let newNote = req.body;
 
-  // Writing the new file
-  fs.readFile("./db/db.json", (err, data) => {
-    if (err) {
-      console.log(err);
-    }
-    var notes = JSON.parse(data);
-  });
-// Response  🚫
-  fs.readFile("./db/db.json", (err, data) => {
-    if (err) {
-      console.log(err);
-    }
-    res.send(data);
-  });
-
-  return console.log("New note added:" + newNote.title);
+    // notes.push(newNote);
+    // updateDb();
+    // return console.log("Added new note: "+newNote.title);
 });
+
+// responseFunction();
 
 // get note with ID
-app.get("api/notes/:id", (req, res) => {
-  res.json(notes[req.params.id]);
-});
+// app.get("api/notes/:id", (req, res) => {
+//   res.json(notes[req.params.id]);
+// });
+// }
 
 // default route - keep near the bottom
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-// const { notes } = require('./');
-// app.use(express.static('public'))
-
-//   app.get('/public/notes/html', (req, res) => {
-//     res.sendFile('notes.html');
-//   });
-
-//   app.get('/public/index/html', (req, res) => {
-//     res.sendFile('index.html');
-//   });
-
 // Keep at end
-app.listen(3002, () => {
+app.listen(PORT, () => {
   console.log("API server now on port 3002!");
 });
